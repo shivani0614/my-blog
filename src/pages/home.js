@@ -3,6 +3,7 @@ import PostShivani from '../components/common/post-shivani';
 import trending from '../assests/mocks/trending';
 import featured from '../assests/mocks/featured';
 import ShivaniPost from '../components/common/shivani-post';
+import PostGrid from '../components/common/post-grid';
 
 const trendingConfig = {
     1: {
@@ -30,8 +31,12 @@ const featuredConfig = {
 const mergeStyles = function (posts, config) {
     posts.forEach((post, index) => {
         post.style = config[index]
+        post.author ='Shivani Developer'
+        post.description = 'Dedicated front-end developer with 4 years of experience creating responsive, user-friendly web applications. Proficient in HTML5, CSS3, JavaScript, React JS, Angular JS, Databases, SQL. Adept at collaborating with cross-functional teams to deliver high-quality projects meeting both client and business requirements.'
     })
 };
+
+const recentPosts =[...trending,...featured,...featured]
 
 mergeStyles(trending, trendingConfig);
 mergeStyles(featured, featuredConfig);
@@ -50,6 +55,20 @@ export default function Home() {
                     </section>
                     
                 </div>
+                </section>
+
+                <section className="bg-white">
+                <section className="container">
+                <div className="row">
+                <h1>Recent Posts</h1>
+                        <PostGrid posts={recentPosts}  />
+                    
+                </div>
+                </section>
+                </section>
+
+                
+                
                 <section className="container">
                 <div className="row">
                 <h2>Trending Posts</h2>
@@ -59,7 +78,7 @@ export default function Home() {
                 </div>
                 </section>
                 
-            </section>
+            
 
         </main>
 
