@@ -40,20 +40,28 @@ const lastFeatured = featured.pop()
 
 export default function Home() {
     return (
-        <section className="container home">
-            <div className="row">
-                <h1>Featured Posts</h1>
-                <section className='featured-posts-container'>
-                <PostShivani posts={featured} columns={2} tagsOnTop={true} />
-                <ShivaniPost post={lastFeatured} tagsOnTop={true}/>
-                </section>
+        <main className='home'>
+            <section className="container">
+                <div className="row">
+                    <h1>Featured Posts</h1>
+                    <section className='featured-posts-container'>
+                        <PostShivani posts={featured} columns={2} tagsOnTop={true} />
+                        <ShivaniPost post={lastFeatured} tagsOnTop={true} />
+                    </section>
+                    
+                </div>
+                <section className="container">
+                <div className="row">
                 <h2>Trending Posts</h2>
-                <section className='trending-posts-container'>
-                <PostShivani posts={trending} columns={3} />
+                    <section className='trending-posts-container'>
+                        <PostShivani posts={trending} columns={3} />
+                    </section>
+                </div>
                 </section>
                 
-               
-            </div>
-        </section>
+            </section>
+
+        </main>
+
     )
 }
