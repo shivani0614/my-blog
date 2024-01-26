@@ -7,11 +7,15 @@ import Home from './pages/home.js';
 
 
 function App() {
-  console.log('pagerender',PageRenderer)
+
+  const user={
+    firstName:'Shivani',
+    lastName:'Developer'
+  }
   return (
     <Router>
       <div className="App">
-        <Navigation/>
+        <Navigation user={user}/>
         <Routes>
           <Route  path="/:page" element={<PageRenderer/>} ></Route>
           <Route  path="/" element={<Home/>} ></Route>

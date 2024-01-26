@@ -1,42 +1,56 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React,{useState} from 'react';
+import { Link } from 'react-router-dom';
+import { Avatar } from 'antd';
 
-const navLinks=[
+const navLinks = [
     {
-        title:'Home',
-        path:'/'
+        title: 'Home',
+        path: '/'
     },
     {
-        title:'Blog',
-        path:'/blog'
+        title: 'Blog',
+        path: '/blog'
     },
     {
-        title:'Contact Us',
-        path:'/contact-us'
+        title: 'Contact Us',
+        path: '/contact-us'
     },
     {
-        title:'Login',
-        path:'/login'
+        title: 'Login',
+        path: '/login'
     },
     {
-        title:'shiv',
-        path:'/shiv'
+        title: 'Sign Up',
+        path: '/sign-up'
     },
 ]
 
-export default function Navigation(){
-    return(
-        <nav className='site-navigation'>
-            <span> My Blog </span>
-            <ul>
-                { navLinks.map((link,index)=>(
-                    <li key={index}>
-                        <Link to={link.path}>{link.title}</Link>
-                    </li>
+const url = 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png';
 
-                ))
-                }
-            </ul>
+export default function Navigation({user}) {
+    const [menuActive,setMenuActive]=useState(false);
+    // https://ionic.io/ionicons
+    return (
+        <nav className='site-navigation'>
+            <span className="menu-title"> My Blog </span>
+            <div className={`menu-content-container ${menuActive && 'active'} `}>
+                <ul>
+                    {navLinks.map((link, index) => (
+                        <li key={index}>
+                            <Link to={link.path}>{link.title}</Link>
+                        </li>
+
+                    ))
+                    }
+                </ul>
+                <span>
+                    <Avatar src={url} size={50} />
+                    <span className='menu-avatar-name'> {`${user.firstName} ${user.lastName}`} </span>
+                </span>
+                
+            </div>
+            <i className="ionicons icon ion-ios-menu" onClick={()=>setMenuActive(!menuActive)}/>
+            
         </nav>
     );
 };
