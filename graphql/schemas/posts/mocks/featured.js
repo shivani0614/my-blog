@@ -1,13 +1,12 @@
-import moment from 'moment'
+const moment = require('moment')
 
-export default [
+module.exports = [
     {
         title: 'Can anyone code?',
         date: moment().format('MMMM DD, YYYY'),
         categories: ['Tech Culture', 'Tech News'],
         link: '#',
         image: 'anyone_can_code.jpg',
-        
     },
     {
         title: 'Using AWS S3 for Storing Blog Images',

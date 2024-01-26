@@ -1,0 +1,17 @@
+{
+  "name": "blog-backend",
+  "version": "1.0.0",
+  "description": "A koa and GraphQl backend for blog",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Shivani Developer",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-koa": "^3.13.0",
+    "graphql-tools": "^9.0.0",
+    "koa": "^2.15.0",
+    "moment": "^2.30.1"
+  }
+}

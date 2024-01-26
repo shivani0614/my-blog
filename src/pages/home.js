@@ -5,6 +5,8 @@ import featured from '../assests/mocks/featured';
 import ShivaniPost from '../components/common/shivani-post';
 import PostGrid from '../components/common/post-grid';
 
+import PageRenderer from '../page-renderer';
+
 const trendingConfig = {
     1: {
         gridArea: ' 1 / 2 / 3 / 3 '
@@ -50,7 +52,9 @@ export default function Home() {
                 <div className="row">
                     <h1>Featured Posts</h1>
                     <section className='featured-posts-container'>
-                        <PostShivani posts={featured} columns={2} tagsOnTop={true} />
+                        <PostShivani posts={featured} columns={2} tagsOnTop={true} >
+                        
+                        </PostShivani>
                         <ShivaniPost post={lastFeatured} tagsOnTop={true} />
                     </section>
                     

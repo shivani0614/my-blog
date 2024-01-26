@@ -1,0 +1,16 @@
+type Query{
+    trendingPosts: [Post]!
+    featuredPosts: [Post]!
+    recentPOsts:[Post]!
+
+}
+
+type Post{
+    id: Int,
+    titlt: String,
+    date: String,
+    categories: [String],
+    author:String,
+    description:String,
+    image:String
+}
