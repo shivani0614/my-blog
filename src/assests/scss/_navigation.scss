@@ -5,6 +5,10 @@
   display: flex;
   justify-content: space-between;
   color: $text-color;
+  position:fixed;
+  z-index:100;
+  top:0;
+  
   .ion-ios-menu {
     font-size: 36px;
     width: 65px;

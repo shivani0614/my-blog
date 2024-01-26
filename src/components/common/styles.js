@@ -1,4 +1,3 @@
-
 const categoryColors = {
     'Tech Culture': 'rgb(255,59,48)',
     'Tech News': 'rgb(0,113,164)',
@@ -9,6 +8,6 @@ const categoryColors = {
     Cloud: 'rgb(175,82,250)'
 }
 
-export default{
+export {
     categoryColors
 }
