@@ -1,13 +1,13 @@
 type Query{
     trendingPosts: [Post]!
     featuredPosts: [Post]!
-    recentPOsts:[Post]!
+    recentPosts:[Post]!
 
 }
 
 type Post{
     id: Int,
-    titlt: String,
+    title: String,
     date: String,
     categories: [String],
     author:String,

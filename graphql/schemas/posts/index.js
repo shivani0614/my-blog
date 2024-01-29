@@ -1,7 +1,7 @@
-const trendingPosts = require('./mocks/trending')
-const featuredPosts = require('./mocks/featured')
 const fs= require('fs')
 const path = require('path')
+const trendingPosts = require('./mocks/trending')
+const featuredPosts = require('./mocks/featured')
 
 module.exports ={
     resolvers:{
@@ -15,9 +15,7 @@ module.exports ={
             ]
         }
     },
-    schema: fs.readFileSync(
-        path.resolve(
-            __dirname,
-            './posts-schema.graphql').toString(),
-    )
+    schema: fs
+    .readFileSync(path.resolve(__dirname, "./posts-schema.graphql"))
+    .toString(),
 }
